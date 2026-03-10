@@ -5,7 +5,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const NAV_ITEMS = [
   { to: '/', label: 'Scanner', icon: BarChart3 },
-  { to: '/candlestick-patterns', label: 'Candles', icon: CandlestickChart },
+  { to: '/candlestick-patterns', label: 'Candles', icon: ChartCandlestick },
   { to: '/chart-patterns', label: 'Charts', icon: LayoutGrid },
   { to: '/market-structure', label: 'SMC', icon: Network },
 ];
