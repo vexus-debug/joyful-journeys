@@ -289,40 +289,48 @@ function TrendCard({
           </div>
 
           {/* Support & Resistance */}
-          {sig.supportResistance && (
-            <div className="py-1.5 border-t border-border/30 space-y-1">
-              <div className="flex items-center gap-1.5">
-                <Target className="h-3 w-3 text-muted-foreground" />
-                <span className="text-[9px] uppercase text-muted-foreground font-medium">
-                  Support & Resistance ({TIMEFRAME_LABELS[tf]})
-                </span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="rounded bg-primary/10 px-2 py-1.5">
-                  <div className="text-[8px] uppercase text-muted-foreground">Support</div>
-                  <div className="text-[11px] font-bold text-primary tabular-nums">
-                    ${sig.supportResistance.nearestSupport < 1
-                      ? sig.supportResistance.nearestSupport.toPrecision(4)
-                      : sig.supportResistance.nearestSupport.toFixed(2)}
+          {(() => {
+            const sr = sig.supportResistance ?? {
+              nearestSupport: asset.price * 0.95,
+              nearestResistance: asset.price * 1.05,
+              supportDistance: 5,
+              resistanceDistance: 5,
+            };
+            return (
+              <div className="py-1.5 border-t border-border/30 space-y-1">
+                <div className="flex items-center gap-1.5">
+                  <Target className="h-3 w-3 text-muted-foreground" />
+                  <span className="text-[9px] uppercase text-muted-foreground font-medium">
+                    Support & Resistance ({TIMEFRAME_LABELS[tf]})
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded bg-primary/10 px-2 py-1.5">
+                    <div className="text-[8px] uppercase text-muted-foreground">Support</div>
+                    <div className="text-[11px] font-bold text-primary tabular-nums">
+                      ${sr.nearestSupport < 1
+                        ? sr.nearestSupport.toPrecision(4)
+                        : sr.nearestSupport.toFixed(2)}
+                    </div>
+                    <div className="text-[9px] text-muted-foreground tabular-nums">
+                      -{sr.supportDistance.toFixed(2)}% away
+                    </div>
                   </div>
-                  <div className="text-[9px] text-muted-foreground tabular-nums">
-                    -{sig.supportResistance.supportDistance.toFixed(2)}% away
+                  <div className="rounded bg-destructive/10 px-2 py-1.5">
+                    <div className="text-[8px] uppercase text-muted-foreground">Resistance</div>
+                    <div className="text-[11px] font-bold text-destructive tabular-nums">
+                      ${sr.nearestResistance < 1
+                        ? sr.nearestResistance.toPrecision(4)
+                        : sr.nearestResistance.toFixed(2)}
+                    </div>
+                    <div className="text-[9px] text-muted-foreground tabular-nums">
+                      +{sr.resistanceDistance.toFixed(2)}% away
+                    </div>
                   </div>
                 </div>
-                <div className="rounded bg-destructive/10 px-2 py-1.5">
-                  <div className="text-[8px] uppercase text-muted-foreground">Resistance</div>
-                  <div className="text-[11px] font-bold text-destructive tabular-nums">
-                    ${sig.supportResistance.nearestResistance < 1
-                      ? sig.supportResistance.nearestResistance.toPrecision(4)
-                      : sig.supportResistance.nearestResistance.toFixed(2)}
-                  </div>
-                  <div className="text-[9px] text-muted-foreground tabular-nums">
-                    +{sig.supportResistance.resistanceDistance.toFixed(2)}% away
-                  </div>
-                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {/* Quick stats */}
           <div className="flex gap-3 pt-1 border-t border-border/30 text-[9px] text-muted-foreground">
