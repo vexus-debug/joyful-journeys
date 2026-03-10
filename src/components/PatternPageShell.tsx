@@ -195,6 +195,7 @@ function PatternCard({ pattern: dp }: { pattern: DetectedPattern }) {
   const isBull = p.type === 'bullish';
   const isBear = p.type === 'bearish';
   const signalLabel = isBull ? 'Buy signal' : isBear ? 'Sell signal' : 'Neutral';
+  const aligned = dp.trendAligned;
   const formedTime = formatFormedTime(dp.formedAt, dp.timeframe);
   const tradingTip = getTradingTip(p.name, p.type, dp.price);
 
