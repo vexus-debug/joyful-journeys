@@ -61,7 +61,7 @@ export function detectCandlestickPatterns(candles: Candle[], excludeLastCandle =
 
     // Doji
     if (body < r * 0.1 && r > 0) {
-      patterns.push({ name: 'Doji', type: 'neutral', significance: 'medium', candleIndex: i, description: 'Indecision — open ≈ close' });
+      patterns.push({ name: 'Doji', type: 'neutral', significance: 'medium', candleIndex: i, description: 'Indecision — open ≈ close. Wait for the next candle to confirm direction before entering.' });
     }
 
     // Hammer (bullish reversal at bottom)
