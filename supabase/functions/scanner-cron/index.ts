@@ -548,9 +548,12 @@ function analyzeTrend(candles: Candle[], emaPeriods = { fast: 9, slow: 21, mid: 
   probability = Math.max(15, Math.min(95, Math.round(probability)));
 
   const confirmations = direction === "bull" ? confirmedBull : confirmedBear;
-  const totalChecks = totalIndicators + (totalIndicators - confirmedBull - confirmedBear); // total indicators checked
+  const totalChecks = totalIndicators + (totalIndicators - confirmedBull - confirmedBear);
 
-  return { direction, strength, ema9: e9, ema21: e21, ema50: e50, ema200: e200, adx, volumeRatio, score, rsi, macdHistogram: macd.histogram, priceStructure, plusDI, minusDI, probability, confirmations, totalChecks };
+  const atr = calculateATR(candles);
+  const trendDuration = calculateTrendDuration(candles, direction, ema9, ema21, rsi, macd.histogram, adx, volumeRatio, atr);
+
+  return { direction, strength, ema9: e9, ema21: e21, ema50: e50, ema200: e200, adx, volumeRatio, score, rsi, macdHistogram: macd.histogram, priceStructure, plusDI, minusDI, probability, confirmations, totalChecks, trendDuration };
 }
 
 // ─── Pattern Detection ──────────────────────────────────────────────
