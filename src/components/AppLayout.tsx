@@ -56,7 +56,7 @@ const ALL_ITEMS = NAV_GROUPS.flatMap((g) => g.items);
 
 // Primary mobile tabs (most used)
 const MOBILE_TABS = [
-  { to: '/', label: 'Scanner', icon: BarChart3 },
+  { to: '/', label: 'Trends', icon: BarChart3 },
   { to: '/confluence', label: 'Confluence', icon: Zap },
   { to: '/market-overview', label: 'Market', icon: Activity },
   { to: '/trade-planner', label: 'Trade', icon: Calculator },

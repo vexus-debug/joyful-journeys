@@ -63,7 +63,7 @@ const Dashboard = () => {
       <header className="flex items-center justify-between border-b border-border px-3 py-1.5">
         <div className="flex items-center gap-3">
           <h1 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-            BYBIT SCANNER
+            TREND SCANNER
           </h1>
           <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
             <span className={`h-1.5 w-1.5 rounded-full ${scanning ? 'bg-primary animate-pulse-dot' : 'bg-muted-foreground'}`} />
