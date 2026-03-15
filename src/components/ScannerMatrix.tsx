@@ -41,6 +41,10 @@ export function ScannerMatrix({ assets, scanning, scanProgress, onAddToWatchlist
   const entries = useMemo(() => {
     const result: TrendEntry[] = [];
 
+    // Accuracy mode thresholds
+    const minProbability = accuracyMode === 'ultra' ? 70 : accuracyMode === 'high' ? 55 : 0;
+    const minConfirmations = accuracyMode === 'ultra' ? 18 : accuracyMode === 'high' ? 12 : 0;
+
     for (const asset of assets) {
       if (search && !asset.symbol.toLowerCase().includes(search.toLowerCase())) continue;
       if (filterSector !== 'all' && getSector(asset.symbol) !== filterSector) continue;
@@ -52,6 +56,11 @@ export function ScannerMatrix({ assets, scanning, scanProgress, onAddToWatchlist
           if (filterDirection !== 'all' && sig.direction !== filterDirection) continue;
           if (sig.confirmations === undefined) sig.confirmations = 0;
           if (sig.totalChecks === undefined) sig.totalChecks = 0;
+
+          // Apply accuracy filters
+          if ((sig.probability ?? 0) < minProbability) continue;
+          if (sig.confirmations < minConfirmations) continue;
+
           result.push({ asset, tf, sig });
         }
       }
@@ -73,7 +82,7 @@ export function ScannerMatrix({ assets, scanning, scanProgress, onAddToWatchlist
     });
 
     return result;
-  }, [assets, search, filterTf, sortMode, filterSector, filterDirection]);
+  }, [assets, search, filterTf, sortMode, filterSector, filterDirection, accuracyMode]);
 
   const bullCount = entries.filter(e => e.sig.direction === 'bull').length;
   const bearCount = entries.length - bullCount;
