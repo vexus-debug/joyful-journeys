@@ -64,12 +64,16 @@ const faqs = [
 ];
 
 const galleryPreview = [
-  { src: dentalChair, alt: "Modern dental chair" },
-  { src: operatory, alt: "Dental operatory" },
-  { src: treatment1, alt: "Treatment in progress" },
-  { src: reception, alt: "Reception area" },
-  { src: waitingArea, alt: "Waiting area" },
-  { src: orthodontics, alt: "Orthodontic care" },
+  { src: exterior, alt: "Clinic exterior — your journey begins here" },
+  { src: entranceSign, alt: "Welcome signage at the entrance" },
+  { src: waitingArea, alt: "Step into our comfortable waiting area" },
+  { src: reception, alt: "Friendly reception & check-in" },
+  { src: frontDesk, alt: "Our front desk team greets you" },
+  { src: dentalChair, alt: "Settle into a modern dental chair" },
+  { src: operatory, alt: "State-of-the-art operatory" },
+  { src: treatment1, alt: "Expert treatment in progress" },
+  { src: orthodontics, alt: "Specialized orthodontic care" },
+  { src: clinicBanner, alt: "Rubi Smile — your smile transformation complete" },
 ];
 
 /* ─── Component ─── */

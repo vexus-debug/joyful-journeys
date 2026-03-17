@@ -36,7 +36,7 @@ const Privacy = () => (
           </SectionReveal>
           <SectionReveal>
             <h2 className="font-display text-2xl font-bold text-foreground">6. Contact</h2>
-            <p>For questions about this privacy policy, contact Rubi Smile Dental Clinic at info@rubismile.com or +234 800 000 0000.</p>
+            <p>For questions about this privacy policy, contact Rubi Smile Dental Clinic at rubiismiledentalclinic@gmail.com or +234 902 440 3837.</p>
           </SectionReveal>
         </div>
       </div>

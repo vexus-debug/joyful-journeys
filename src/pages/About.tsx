@@ -286,7 +286,7 @@ const About = () => (
             </h2>
             <div className="mt-8 space-y-5">
               {[
-                { icon: MapPin, label: "Location", value: "Karu, Abuja, Nigeria (Near INEC Office)" },
+                { icon: MapPin, label: "Location", value: "No 6 November Street, Chief Palace Estate, Karu, Abuja" },
                 { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 5:30 PM" },
                 { icon: MessageCircle, label: "WhatsApp", value: "0903 853 5214" },
                 { icon: Phone, label: "Call / Enquiry", value: "0902 440 3837" },
