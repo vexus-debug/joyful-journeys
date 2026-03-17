@@ -59,7 +59,7 @@ const testimonials = [
 const faqs = [
   { q: "Do you accept NHIS insurance?", a: "Yes! We accept NHIS for eligible treatments including routine checkups, fillings, and extractions. Bring your NHIS card to your appointment." },
   { q: "Is the first consultation free?", a: "We offer affordable initial consultations. Contact us for current pricing and any ongoing promotions for new patients." },
-  { q: "How do I book an appointment?", a: "You can book via WhatsApp, phone call, or walk in during our working hours (Mon–Sat, 9AM–5:30PM)." },
+  { q: "How do I book an appointment?", a: "You can book via WhatsApp, phone call, or walk in during our working hours (Mon–Fri, 9AM–5:30PM | Sat, 9AM–3:30PM)." },
   { q: "Do you handle dental emergencies?", a: "Yes, we accommodate dental emergencies during working hours. Call us immediately and we'll prioritize your care." },
   { q: "Is teeth whitening safe?", a: "Absolutely. We use clinically proven, dentist-supervised whitening treatments that are safe for your enamel." },
 ];
