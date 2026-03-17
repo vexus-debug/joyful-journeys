@@ -274,7 +274,7 @@ const Index = () => (
           {[
             { icon: Zap, title: "Modern Equipment", desc: "State-of-the-art technology for precise, painless treatments. Digital imaging and sterilized instruments.", gradient: "from-accent/5 to-accent/0", img: dentalChair },
             { icon: Shield, title: "NHIS Accepted", desc: "We accept government insurance for essential dental treatments. Making quality care accessible to all.", gradient: "from-primary/5 to-primary/0", img: clinicBanner },
-            { icon: Heart, title: "Personalized Care", desc: "We take extra efforts to understand your specific needs and provide tailored dental solutions for lasting results.", gradient: "from-accent/5 to-accent/0", img: treatment2 },
+            { icon: Heart, title: "Personalized Care", desc: "We take extra efforts to understand your specific needs and provide tailored dental solutions for lasting results.", gradient: "from-accent/5 to-accent/0", img: personalizedCare },
           ].map((item, i) => (
             <SectionReveal key={item.title} delay={i * 0.15}>
               <div className={`relative rounded-3xl bg-gradient-to-br ${item.gradient} border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 group`}>
