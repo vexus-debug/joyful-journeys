@@ -363,6 +363,7 @@ const About = () => {
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default About;
