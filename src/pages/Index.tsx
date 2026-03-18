@@ -225,7 +225,7 @@ const Index = () => (
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <img src={entranceSign} alt="Dental clinic entrance" className="w-full aspect-[4/3] object-cover" />
+                <img src={reception} alt="Reception desk" className="w-full aspect-[4/3] object-cover" />
               </motion.div>
             </div>
           </SectionReveal>
