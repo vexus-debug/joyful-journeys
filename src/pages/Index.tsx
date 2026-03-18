@@ -617,7 +617,8 @@ const Index = () => {
       </div>
     </section>
   </div>
-);
+  );
+};
 
 /* ─── FAQ Item Component ─── */
 const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
