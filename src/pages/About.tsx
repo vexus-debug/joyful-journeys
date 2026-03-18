@@ -66,13 +66,13 @@ const About = () => {
       <div className="container mx-auto px-6 relative z-10 py-32">
         <SectionReveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-1.5 font-display text-sm font-semibold text-accent backdrop-blur-sm border border-accent/20">
-            <Sparkles className="h-4 w-4" /> About Rubi Smile
+            <Sparkles className="h-4 w-4" /> {(c.hero_badge as string) || "About Rubi Smile"}
           </span>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-foreground mt-6 max-w-3xl leading-[1.1]">
-            Dentistry with <span className="text-accent">Heart</span>
+            {(c.hero_heading as string) || <>Dentistry with <span className="text-accent">Heart</span></>}
           </h1>
           <p className="font-body text-lg text-primary-foreground/80 mt-6 max-w-xl leading-relaxed">
-            We believe everyone deserves access to quality, compassionate dental care. That's the promise behind every smile we create.
+            {(c.hero_desc as string) || "We believe everyone deserves access to quality, compassionate dental care. That's the promise behind every smile we create."}
           </p>
         </SectionReveal>
       </div>
