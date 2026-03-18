@@ -24,6 +24,7 @@ import treatment3 from "@/assets/gallery/treatment-3.jpg";
 import clinicBanner from "@/assets/gallery/clinic-banner.webp";
 import entranceSign from "@/assets/gallery/entrance-sign-new.jpg";
 import orthodontics from "@/assets/gallery/orthodontics.webp";
+import { supabase } from "@/integrations/supabase/client";
 
 /* ─── Data ─── */
 const services = [
