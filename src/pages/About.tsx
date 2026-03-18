@@ -187,11 +187,11 @@ const About = () => {
           </div>
         </SectionReveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {values.map((v, i) => (
-            <SectionReveal key={v.title} delay={i * 0.08}>
+          {dbValues.map((v: any, i: number) => (
+            <SectionReveal key={v.title || i} delay={i * 0.08}>
               <div className="rounded-card bg-background p-8 shadow-card h-full group hover:shadow-hover-lift transition-all duration-300 border border-border/30">
-                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-inner ${v.color} group-hover:scale-110 transition-transform`}>
-                  <v.icon className={`h-6 w-6 ${v.iconColor}`} />
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-inner ${i % 2 === 0 ? "bg-accent/10" : "bg-primary/10"} group-hover:scale-110 transition-transform`}>
+                  {values[i] ? <values[i].icon className={`h-6 w-6 ${i % 2 === 0 ? "text-accent" : "text-primary"}`} /> : <Heart className={`h-6 w-6 ${i % 2 === 0 ? "text-accent" : "text-primary"}`} />}
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground">{v.title}</h3>
                 <p className="font-body text-sm text-muted-foreground mt-2 leading-relaxed">{v.desc}</p>
